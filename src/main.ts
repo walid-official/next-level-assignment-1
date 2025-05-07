@@ -29,15 +29,15 @@
         }
     }
     class Car extends Vehicle {
-        model: string;
-        constructor(make: string,year: number, model: string){
+        private model: string;
+        constructor(make: string, year: number, model: string) {
             super(make, year);
             this.model = model;
         }
-        getModel(){
-            return `Model: ${this.model}`
+        getModel() {
+            return `Model: ${this.model}`;
         }
-    }
+    }    
     // problem 5
     function processValue(value: string | number): number {
         if(typeof value === "string"){
@@ -49,6 +49,10 @@
         return value;
     }
     // problem 6
+    interface Product {
+        name: string;
+        price: number;
+    }    
     function getMostExpensiveProduct(products: Product[]): Product | null {
         if(products.length > 0){
             const  mostExpensiveProduct = products.find(product => product.price === Math.max(...products.map(product => product.price)));
