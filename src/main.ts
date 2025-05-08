@@ -7,8 +7,8 @@
     }
 
     function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[] {
-        const item =  items.filter(item => item.rating >= 4)
-         return item;
+        const filteredItem =  items.filter(item => item.rating >= 4)
+         return filteredItem;
      }
    
     function concatenateArrays<T>(...arrays: T[][]):T[] {
@@ -24,7 +24,7 @@
             this.year = year;
         }
         getInfo(){
-            return `make: ${this.make}, year: ${this.year}`
+            return `Make: ${this.make}, year: ${this.year}`
         }
     }
     class Car extends Vehicle {
@@ -78,7 +78,7 @@
       }
    
     async function squareAsync(n: number): Promise<number> {
-        let square = new Promise<number>((resolve, reject) => {
+        const square = new Promise<number>((resolve, reject) => {
             if(n >= 0){
                 setTimeout(() => {
                     resolve(n * n);
