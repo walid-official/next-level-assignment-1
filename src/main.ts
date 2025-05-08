@@ -1,22 +1,22 @@
 {
-    // Problem 1
+   
     function formatString(input: string, toUpper?: boolean): string {
-        if(!toUpper){
+        if(toUpper === false){
            return `${input.toLowerCase()}`
         }
         return `${input.toUpperCase()}`
     }
-    // problem 2
+
     function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[] {
         const item =  items.filter(item => item.rating >= 4)
          return item;
      }
-    // problem 3
+   
     function concatenateArrays<T>(...arrays: T[][]):T[] {
         const mergedArray = arrays.reduce((acc, curr) => acc.concat(curr), []);
         return mergedArray
     }
-    // problem 4
+    
     class Vehicle  {
         private make: string;
         year: number;
@@ -38,7 +38,7 @@
             return `Model: ${this.model}`;
         }
     }    
-    // problem 5
+
     function processValue(value: string | number): number {
         if(typeof value === "string"){
             return value.length
@@ -48,7 +48,7 @@
         }
         return value;
     }
-    // problem 6
+   
     interface Product {
         name: string;
         price: number;
@@ -60,7 +60,7 @@
         }
         return null;
       }
-    // problem 7
+  
     enum Day {
         Monday,
         Tuesday,
@@ -77,9 +77,9 @@
         }
         return "Weekday"
       }
-    // problem 8
+   
     async function squareAsync(n: number): Promise<number> {
-        let promise = new Promise<number>((resolve, reject) => {
+        let square = new Promise<number>((resolve, reject) => {
             if(n >= 0){
                 setTimeout(() => {
                     resolve(n * n);
@@ -89,6 +89,6 @@
                 reject("Error: Negative number not allowed")
             }
         });
-        return promise; 
+        return square; 
     }
 }
